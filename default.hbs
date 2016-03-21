@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class="menu-drawer header-off fixed-height">
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+
+    {{>fonts }}
+
+    <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/custom.css"}}" />
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{>analytics }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+
+   <div class="wrap">
+
+     <header class="header">
+
+    		<div class="logo-wrap">
+    			<div class="logo{{#if @blog.logo}}{{else}} plain{{/if}} logo-left">
+               {{#if @blog.logo}}
+                 <a id="blog-logo" href="{{@blog.url}}"><img id="logo" src="{{@blog.logo}}" alt="{{@blog.title}} Logo" /></a>
+               {{else}}
+                 <div class="blog-title"><a href="{{@blog.url}}" title="Go to Home">{{@blog.title}}</a></div>
+               {{/if}}
+          </div>
+
+          <a id="menu-trigger" href="#nav"><svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.3 40" enable-background="new 0 0 49.3 40"><path d="M44.3 10h-39.3c-2.7 0-5-2.2-5-5 0-2.7 2.2-5 5-5h39.3c2.7 0 5 2.2 5 5s-2.2 5-5 5zM44.3 25h-39.3c-2.7 0-5-2.2-5-5 0-2.7 2.2-5 5-5h39.3c2.7 0 5 2.2 5 5s-2.2 5-5 5zM44.3 40h-39.3c-2.7 0-5-2.2-5-5s2.2-5 5-5h39.3c2.7 0 5 2.2 5 5s-2.2 5-5 5z"/></svg><span>Menu</span></a>
+        </div><!-- /logo-wrap -->
+
+	   </header>
+
+      {{navigation }}
+
+
+    {{! Everything else gets inserted here }}
+
+
+
+      {{{body}}}
+
+
+    {{>footer }}
+
+  </div><!-- /wrap -->
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    {{! The main JavaScript file for JRNY }}
+    <script>
+      if (typeof jQuery == 'undefined') {
+        document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></'+'script>');
+      }
+    </script>
+    <script> var ie9 = false; </script>
+    <!--[if lte IE 9 ]>
+    <script> var ie9 = true; </script>
+    <![endif]-->
+
+    <script type="text/javascript" src="{{asset "js/plugins/global-plugins.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/scripts.min.js"}}"></script>
+
+</body>
+</html>

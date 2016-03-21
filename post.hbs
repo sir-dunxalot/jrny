@@ -1,0 +1,206 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+
+
+<section class="main">
+
+    <article class="{{post_class}}">
+    {{! Everything inside the #post tags pulls data from the post }}
+    {{#post}}
+
+
+    <div class="post-top">
+
+      {{#if image}}
+
+        <span class="featured-image with-image"><img src="{{image}}" alt="{{title}}" /></span>
+
+      {{else}}
+
+        <span class="featured-image not-post-image">{{content words="0"}}</span>
+
+      {{/if}}
+
+    <div class="post-align post-header">
+			<div class="post-header-inner">
+				<ul class="meta top">
+		      <li class="time">
+			     <time class="post-date updated" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></li>
+	    </ul>
+			<h1 class="entry-title post-title">{{title}}</h1>
+		<ul class="meta">
+  		<li class="author-meta post-tags">
+  			<div class="author-avatar avatar-small">{{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}}</div>
+        <div class="author-byline">Post by  <span class="vcard author post-author"><span class="fn">{{author}}</span></span></div>
+  		</li>
+	  </ul>
+		</div><!-- /post-header-inner -->
+		</div><!-- /post-header -->
+	</div><!-- /post-top -->
+
+
+        <div class="inner post-inner">
+            {{content}}
+
+
+
+  <div class="meta-hold">
+
+{{!--   {{#if tags}}
+    <ul class="meta bottom">
+  			<li class="tag post-tags">Tagged: {{tags separator=", "}}</li>
+  	</ul>
+  {{/if}} --}}
+
+<div class="meta bottom subscribe-wrapper">
+
+{{!--Begin MailChimp Signup Form --}}
+
+<div id="mc_embed_signup">
+
+  <h3 class="subscribe-heading">Get updates sent straight to your inbox</h3>
+
+  <form action="//duncangwalker.us13.list-manage.com/subscribe/post?u=125737cb02573f0a1fe915cdd&amp;id=123d71e67f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+
+    <div id="mc_embed_signup_scroll">
+
+      <div class="mc-field-group">
+        {{!-- <label for="mce-EMAIL">Email Address </label> --}}
+        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email address">
+      </div>
+
+      {{!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--}}
+      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_125737cb02573f0a1fe915cdd_123d71e67f" tabindex="-1" value="">
+      </div>
+
+      <div>
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+      </div>
+    </div>
+
+    <div id="mce-responses" class="clear">
+      <div class="response" id="mce-error-response" style="display:none"></div>
+      <div class="response" id="mce-success-response" style="display:none"></div>
+    </div>
+
+  </form>
+</div>
+
+{{!--End mc_embed_signup--}}
+
+{{!-- </div>
+
+
+
+  <ul class="meta sharer">
+  	<li class="share-on">
+  	  Share on: 		<a target="blank" title="{{title}}" href="https://twitter.com/share?text={{title}}%20-%20&amp;url={{url absolute="true"}}" onclick="window.open('https://twitter.com/share?text={{title}}%20-%20&amp;url={{url absolute="true"}}','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class="twitter">
+  		 <i class="fa fa-twitter"></i>		 </a>
+  </li>
+  <li class="share-on">
+  		<a href="http://pinterest.com/pin/create/button/?url={{url absolute="true"}}&amp;description={{title}}" target="_blank" class=" pinterest offblack">
+  			<i class="fa fa-pinterest"></i>			</a>
+  </li>
+  <li class="share-on">
+  		 <a target="blank" title="{{title}}" href="http://www.facebook.com/share.php?u={{url absolute="true"}}" onclick="window.open('http://www.facebook.com/share.php?u={{url absolute="true"}}','facebook','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class=" facebook ">
+  		 <i class="fa fa-facebook"></i>		 </a>
+  </li>
+
+  <li class="share-on">
+  		  <a onclick="window.open('https://plus.google.com/share?url={{url absolute="true"}}','gplusshare','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="https://plus.google.com/share?url={{url absolute="true"}}" class=" googleplus offblack">
+  		   <i class="fa fa-google-plus"></i>		   </a>
+  </li>
+  </ul>
+
+
+</div> <!-- /meta-hold --> --}}
+
+
+
+
+{{! Everything inside the #author tags pulls data from the author }}
+{{#author}}
+
+<div class="author-wrap">
+  {{#if image}}
+    <span class="author-avatar"><img class="author-thumb" src="{{image}}" alt="{{name}} image" nopin="nopin" /></span>
+  {{/if}}
+  <div class="author-bio">
+      <h6><span>Post by</span> <a href="{{url}}">{{name}}</a></h6>
+      {{#if bio}}
+          <p>{{bio}}</p>
+      {{/if}}
+    </div>
+</div>
+
+{{/author}}
+
+
+
+</div> <!-- post-inner -->
+
+
+
+
+    </article>
+
+    <div class="post-navigation">
+
+
+
+
+  {{#prev_post}}
+
+    <article class="single-post-nav previous-post-link" {{#if image}} style="background-image: url({{image}})"{{/if}}>
+  		<a href="{{url}}">
+  			<div class="nav-inner">
+  				<h4 class="entry-title">{{{title}}}</h4>
+  				<p>{{excerpt words="5"}}&hellip;</p>
+          <!-- Author not supported in Ghost 0.6.4 but will be in 0.7
+          {{#if author}}
+            <ul class="meta">
+              <li class="author-meta post-tags">
+                <div class="author-avatar avatar-small">{{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}} image" nopin="nopin" />{{/if}}</div>
+                 <div class="author-byline">Post by  <span class="vcard author post-author"><span class="fn">{{author}}</span></span></div>
+            </li>
+          </ul>
+          {{/if}}
+          -->
+  			</div>
+  		</a>
+  	</article>
+
+
+    {{/prev_post}}
+    {{#next_post}}
+
+    <article class="single-post-nav next-post-link" {{#if image}} style="background-image: url({{image}})"{{/if}}>
+  		<a href="{{url}}">
+  			<div class="nav-inner">
+  				<h4 class="entry-title">{{{title}}}</h4>
+  				<p>{{excerpt words="5"}}&hellip;</p>
+          <!-- Author not supported in Ghost 0.6.4 but will be in 0.7
+          {{#if author}}
+            <ul class="meta">
+              <li class="author-meta post-tags">
+                <div class="author-avatar avatar-small">{{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}} image" nopin="nopin" />{{/if}}</div>
+                 <div class="author-byline">Post by  <span class="vcard author post-author"><span class="fn">{{author}}</span></span></div>
+            </li>
+          </ul>
+        {{/if}}
+        -->
+  			</div>
+  		</a>
+  	</article>
+
+
+    {{/next_post}}
+
+	</div>
+{{/post}}
+</section>
+
+{{>disqus}}

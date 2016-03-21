@@ -1,0 +1,57 @@
+{{! This is the post loop - each post will be output using this markup }}
+<div id="content">
+{{#foreach posts}}
+
+<article class="{{post_class}}">
+
+  {{#if image}}
+
+    <a class="featured-image" href="{{url}}" title="{{title}}">
+      <img src="{{image}}" alt="{{title}}" />
+    </a>
+
+  {{else}}
+
+    <a class="featured-image" href="{{url}}">
+      {{content words="0"}}
+    </a>
+
+  {{/if}}
+
+		<div class="post-wrapper">
+
+		  <div class="inner post-inner">
+        <ul class="meta top">
+		      <li class="time">
+			      <a href="{{url}}" title="Big Sur"><time class="post-date updated" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</a>
+          </li>
+        </ul>
+
+  			<h2 class="post-title entry-title">
+  				<a href="{{url}}">{{{title}}}</a>
+  			</h2>
+
+  		  <div class="excerpt">
+
+        		  <p>{{excerpt words="10"}}...</p>
+
+        	    <ul class="meta">
+        		    <li class="author-meta post-tags">
+                  <div class="author-avatar avatar-small">{{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}} image" nopin="nopin" />{{/if}}</div>
+        			     <div class="author-byline">Post by  <span class="vcard author post-author"><span class="fn">{{author}}</span></span></div>
+        		  </li>
+        	  </ul>
+
+            <p><a href="{{url}}" class="more-link">More</a></p>
+        </div><!-- /excerpt -->
+  	</div><!-- / post-wrapper -->
+  </div><!-- / inner.post-inner -->
+
+<span class="star"></span>
+</article>
+
+{{/foreach}}
+</div>
+
+{{! Previous/next page links - displayed on every page }}
+{{pagination}}

@@ -1,0 +1,25 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+    {{! The main content area on the homepage }}
+    {{! The tag below includes the post loop - partials/loop.hbs }}
+<section class="main main-archive">
+{{#author}}
+    <article class="result author-enhanced">
+			<div class="inner post-inner">
+        <span class="author-avatar"><img alt="" src="{{image}}"></span>
+				<span class="meta">Posts by</span>
+
+				<h1 class="searching">{{name}}</h1>
+        <p>{{bio}}</p>
+				    <div class="author-socials-wrap">
+  	          {{#if website}}<a class="author-socials" href="http://www.meanthemes.com" target="_blank"><i class="fa fa-link"></i><span>Website</span></a>{{/if}}
+              <a class="author-socials" href="{{url}}rss/" target="_blank"><i class="fa fa-rss"></i><span>RSS</span></a>
+			      </div>
+
+			</div>
+		</article>
+{{/author}}
+
+    {{> "loop"}}
+    </section>

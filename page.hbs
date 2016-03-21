@@ -1,0 +1,80 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+
+
+<section class="main">
+
+    <article class="{{post_class}}">
+    {{! Everything inside the #post tags pulls data from the post }}
+    {{#post}}
+
+
+    <div class="post-top">
+
+      {{#if image}}
+
+      <span class="featured-image"><img src="{{image}}" alt="{{title}}" /></span>
+
+      {{else}}
+
+      <span class="featured-image not-post-image">{{content words="0"}}</span>
+
+      {{/if}}
+
+    <div class="post-align post-header">
+      <div class="post-header-inner">
+
+      <h1 class="entry-title post-title">{{title}}</h1>
+
+    </div><!-- /post-header-inner -->
+    </div><!-- /post-header -->
+  </div><!-- /post-top -->
+
+
+        <div class="inner post-inner">
+            {{content}}
+
+
+
+  <div class="meta-hold">
+
+  <ul class="meta sharer">
+    <li class="share-on">
+      Share on: 		<a target="blank" title="{{title}}" href="https://twitter.com/share?text={{title}}20-%20&amp;url={{url absolute="true"}}" onclick="window.open('https://twitter.com/share?text={{title}}%20-%20&amp;url={{url absolute="true"}}','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class="twitter">
+       <i class="fa fa-twitter"></i>		 </a>
+  </li>
+  <li class="share-on">
+      <a href="http://pinterest.com/pin/create/button/?url={{url absolute="true"}}&amp;media=amp;description={{title}}" target="_blank" class=" pinterest offblack">
+        <i class="fa fa-pinterest"></i>			</a>
+  </li>
+  <li class="share-on">
+       <a target="blank" title="Big+Sur" href="http://www.facebook.com/share.php?u={{url absolute="true"}}" onclick="window.open('http://www.facebook.com/share.php?u={{url absolute="true"}}','facebook','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class=" facebook ">
+       <i class="fa fa-facebook"></i>		 </a>
+  </li>
+
+  <li class="share-on">
+        <a onclick="window.open('https://plus.google.com/share?url={{url absolute="true"}}','gplusshare','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="https://plus.google.com/share?url={{url absolute="true"}}" class=" googleplus offblack">
+         <i class="fa fa-google-plus"></i>		   </a>
+  </li>
+  </ul>
+
+
+</div> <!-- /meta-hold -->
+
+
+
+
+
+
+
+</div> <!-- post-inner -->
+
+
+
+    {{/post}}
+    </article>
+
+</section>
