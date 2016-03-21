@@ -1,14 +1,13 @@
-.subscribe-wrapper {
-  width: 100%;
+/* Subscribe forms */
+
+.home-template #mc_embed_signup {
+  padding: 15px 25px;
+  margin-bottom: 20px;
+}
+
+#mc_embed_signup {
   text-align: center;
-}
-
-.home-template .subscribe-heading {
-  /*margin: 38px 0 30px;*/
-}
-
-.home-template .subscribe-wrapper {
-  padding: 15px 25px 25px;
+  margin-bottom: 30px;
 }
 
 #mc_embed_signup .button {
