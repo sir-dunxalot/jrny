@@ -4,10 +4,10 @@
 
 <article class="{{post_class}}">
 
-  {{#if image}}
+  {{#if feature_image}}
 
     <a class="featured-image" href="{{url}}" title="{{title}}">
-      <img src="{{image}}" alt="{{title}}" />
+      <img src="{{feature_image}}" alt="{{title}}" />
     </a>
 
   {{else}}
@@ -37,7 +37,7 @@
 
         	    <ul class="meta">
         		    <li class="author-meta post-tags">
-                  <div class="author-avatar avatar-small">{{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}} image" nopin="nopin" />{{/if}}</div>
+                  <div class="author-avatar avatar-small">{{#if author.profile_image}}<img class="author-thumb" src="{{author.profile_image}}" alt="{{author.name}} image" nopin="nopin" />{{/if}}</div>
         			     <div class="author-byline">Post by  <span class="vcard author post-author"><span class="fn">{{author}}</span></span></div>
         		  </li>
         	  </ul>

@@ -14,9 +14,9 @@
 
     <div class="post-top">
 
-      {{#if image}}
+      {{#if feature_image}}
 
-        <span class="featured-image with-image"><img src="{{image}}" alt="{{title}}" /></span>
+        <span class="featured-image with-image"><img src="{{feature_image}}" alt="{{title}}" /></span>
 
       {{else}}
 
@@ -33,7 +33,7 @@
 			<h1 class="entry-title post-title">{{title}}</h1>
 		<ul class="meta">
   		<li class="author-meta post-tags">
-  			<div class="author-avatar avatar-small">{{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}}</div>
+  			<div class="author-avatar avatar-small">{{#if author.profile_image}}<img class="author-thumb" src="{{author.profile_image}}" alt="Author image" nopin="nopin" />{{/if}}</div>
         <div class="author-byline">Post by  <span class="vcard author post-author"><span class="fn">{{author}}</span></span></div>
   		</li>
 	  </ul>
@@ -125,8 +125,8 @@
 {{#author}}
 
 <div class="author-wrap">
-  {{#if image}}
-    <span class="author-avatar"><img class="author-thumb" src="{{image}}" alt="{{name}} image" nopin="nopin" /></span>
+  {{#if profile_image}}
+    <span class="author-avatar"><img class="author-thumb" src="{{profile_image}}" alt="{{name}} image" nopin="nopin" /></span>
   {{/if}}
   <div class="author-bio">
       <h6><span>Post by</span> <a href="{{url}}">{{name}}</a></h6>
@@ -154,7 +154,7 @@
 
   {{#prev_post}}
 
-    <article class="single-post-nav previous-post-link" {{#if image}} style="background-image: url({{image}})"{{/if}}>
+    <article class="single-post-nav previous-post-link" {{#if feature_image}} style="background-image: url({{feature_image}})"{{/if}}>
   		<a href="{{url}}">
   			<div class="nav-inner">
   				<h4 class="entry-title">{{{title}}}</h4>
@@ -163,7 +163,7 @@
           {{#if author}}
             <ul class="meta">
               <li class="author-meta post-tags">
-                <div class="author-avatar avatar-small">{{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}} image" nopin="nopin" />{{/if}}</div>
+                <div class="author-avatar avatar-small">{{#if author.profile_image}}<img class="author-thumb" src="{{author.profile_image}}" alt="{{author.name}} image" nopin="nopin" />{{/if}}</div>
                  <div class="author-byline">Post by  <span class="vcard author post-author"><span class="fn">{{author}}</span></span></div>
             </li>
           </ul>
@@ -177,7 +177,7 @@
     {{/prev_post}}
     {{#next_post}}
 
-    <article class="single-post-nav next-post-link" {{#if image}} style="background-image: url({{image}})"{{/if}}>
+    <article class="single-post-nav next-post-link" {{#if feature_image}} style="background-image: url({{feature_image}})"{{/if}}>
   		<a href="{{url}}">
   			<div class="nav-inner">
   				<h4 class="entry-title">{{{title}}}</h4>
@@ -186,7 +186,7 @@
           {{#if author}}
             <ul class="meta">
               <li class="author-meta post-tags">
-                <div class="author-avatar avatar-small">{{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}} image" nopin="nopin" />{{/if}}</div>
+                <div class="author-avatar avatar-small">{{#if author.profile_image}}<img class="author-thumb" src="{{author.profile_image}}" alt="{{author.name}} image" nopin="nopin" />{{/if}}</div>
                  <div class="author-byline">Post by  <span class="vcard author post-author"><span class="fn">{{author}}</span></span></div>
             </li>
           </ul>
